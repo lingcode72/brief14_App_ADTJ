@@ -30,7 +30,7 @@ pipeline {
         stage('Login') {
             steps {
                 script {
-                    sh 'docker login -u ling69 -p dckr_pat_EQPoqTNrIv7Hb3nFr4Pg5_yVxOs'
+                    sh 'docker login -u ling69 -p $DOCKERHUB_CREDENTIALS'
                 }
             }
         }
@@ -55,19 +55,18 @@ pipeline {
             }
         }
 
-        stage('Terraform Init (Staging)') {
+        stage('Terraform init (Staging)') {
             steps {
-                script { 
+                script {
                     sh 'cd stagingEnvironment && terraform init'
-                   
                 }
             }
         }
 
-        stage('Terraform Plan (Staging)') {
+        stage('Terraform plan (Staging)') {
             steps {
                 script {
-                     sh 'cd stagingEnvironment && terraform plan'
+                    sh 'cd stagingEnvironment && terraform plan'
                 }
             }
         }
@@ -102,7 +101,7 @@ pipeline {
                     sh 'cd proEnvironment && terraform apply -auto-approve'
                 }
             }
-        }    
+        }
     }
 }
 
