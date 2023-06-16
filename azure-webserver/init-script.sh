@@ -2,7 +2,7 @@ sudo sh install-docker.sh
 
 
 #Creating container
-sudo docker run -d -p 1234:80 --name py_slim ling69/python:3.9-slim
+sudo docker run -d -p 80:1234 --name py_slim ling69/python:3.9-slim
 
 #tage docker
 #sudo docker tag py-slim ling69/python:3.9-slim
