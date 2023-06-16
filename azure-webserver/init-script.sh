@@ -3,7 +3,7 @@ curl -fsSL https://get.docker.com -o install-docker.sh
 sudo sh install-docker.sh
 
 #Creating container
-sudo docker run -d -p 80:1234 --name py_slim ling69/python:3.9-slim
+sudo docker run -d -p 80:1234 --name py_slim ling69/py_slim
 
 #tage docker
 #sudo docker tag py-slim ling69/python:3.9-slim
