@@ -20,8 +20,10 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    
     - task: Docker@2
       inputs:
-       containerRegistry: 'dockerhub_registry'
-       command: 'buildAndPush'
-       Dockerfile: '**/Dockerfile'
+        containerRegistry: 'dockerhub_registry'
+        repository: 'ling69/py3'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
